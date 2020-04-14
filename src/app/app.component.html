@@ -1,11 +1,10 @@
-<app-top-bar></app-top-bar>
 
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
-  <router-outlet></router-outlet>
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedFeature==='recipes'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature==='shopping-list'"></app-shopping-list>
+    </div>
+  </div>
 </div>
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->
